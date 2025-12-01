@@ -18,17 +18,17 @@ func main() {
 
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
-		line := scanner.Text()
-		direction := line[0]
-		number, err := strconv.Atoi(line[1:])
+		instruction := scanner.Text()
+		direction := instruction[0]
+		ticks, err := strconv.Atoi(instruction[1:])
 		if err != nil {
 			panic(err)
 		}
 
 		if direction == 'L' {
-			dialPosition = (dialPosition - number) % 100
+			dialPosition = (dialPosition - ticks) % 100
 		} else if direction == 'R' {
-			dialPosition = (dialPosition + number) % 100
+			dialPosition = (dialPosition + ticks) % 100
 		} else {
 			continue
 		}
