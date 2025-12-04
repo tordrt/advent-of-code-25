@@ -29,10 +29,10 @@ func main() {
 			maxIdx := searchStart
 			maxByte := bank[searchStart]
 
-			for y := searchStart + 1; y <= len(bank)-digitsRemaining; y++ {
-				if bank[y] > maxByte {
-					maxByte = bank[y]
-					maxIdx = y
+			for i := searchStart + 1; i <= len(bank)-digitsRemaining; i++ {
+				if bank[i] > maxByte {
+					maxByte = bank[i]
+					maxIdx = i
 				}
 			}
 
